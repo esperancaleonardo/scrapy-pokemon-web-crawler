@@ -1,10 +1,12 @@
 import scrapy
-
+import pandas as pd
 
 class PokemonSpider(scrapy.Spider):
     name = 'pokemon'
     allowed_domains = ['pokeapi.co']
-    start_urls = ['http://pokeapi.co/api/v2/pokemon/ditto', 'http://pokeapi.co/api/v2/pokemon/pikachu']
+
+    df = pd.read_csv('pokemons_list.csv')
+    start_urls = df['pokemon_api_url'].tolist()
 
     def parse(self, response):
         response = response.json()
