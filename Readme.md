@@ -1,6 +1,8 @@
 # scrapy-pokemon-web-crawler
 
-Pokemon [pokeapi](https://pokeapi.co/) scrapy demo project using spiders and simple yelds to save data in **.csv** files
+[Versão em português-BR](./Readme-ptBR.md)
+
+Pokemon [pokeapi](https://pokeapi.co/) scrapy demo project using spiders and simple yields to save data in **.csv** files
 
 <br>
 
@@ -12,7 +14,7 @@ Demonstrate how to fetch and crawl data from APIs REST using python. This Reposi
 <br>
 
 ---
-## How to
+## How to DIY
 
 clone this repository
 ```bash
