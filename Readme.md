@@ -1,10 +1,17 @@
 # scrapy-pokemon-web-crawler
 
-Pokemon pokeapi scrapy demo project using spiders and simple yelds to save data in .csv files
+Pokemon [pokeapi](https://pokeapi.co/) scrapy demo project using spiders and simple yelds to save data in **.csv** files
 
+<br>
+
+---
 ## Motivation
 
 Demonstrate how to fetch and crawl data from APIs REST using python. This Repository contains spiders that fetch and crawl data from REST APIs JSON responses and saves it to .csv files with headers.
+
+<br>
+
+---
 ## How to
 
 clone this repository
@@ -46,7 +53,50 @@ scrapy crawl pokemon -L INFO -o pokemons_info.csv
 
 it will create a **.csv** with the structure (columns) below:
 
-| id | name      | order | base_exp | sprite       | hp | attack | defense | speed | height | weight |
-|----|-----------|-------|----------|--------------|----|--------|---------|-------|--------|--------|
-| 1  | bulbasaur | 1     | 64       | <sprite_url> | 45 | 49     | 49      | 45    | 7      | 69     |
+| id | name      | order | base_exp | sprite   | hp | attack | defense | speed | height | weight |
+|----|-----------|-------|----------|----------|----|--------|---------|-------|--------|--------|
+| 1  | bulbasaur | 1     | 64       | <sprite> | 45 | 49     | 49      | 45    | 7      | 69     |
 
+
+<br>
+
+---
+## Create new spiders to fetch other routes
+
+generate the spider inside this repo folder
+```bash
+scrapy genspider <spidername> <domaintocrawl>
+```
+
+it will create a **.py** file with the spider given name and a spider template inside `/spiders` folder
+
+```python
+import scrapy
+
+# generated with  'scrapy genspider myspider exemple.com'
+class MyspiderSpider(scrapy.Spider):
+    name = 'myspider'
+    allowed_domains = ['exemple.com']
+    start_urls = ['http://exemple.com/']
+
+    def parse(self, response):
+        pass
+
+```
+
+## Stack in project
+
+**Python version:** 3.10.5
+
+**Libraries:** pandas@1.4.3, scrapy@2.6.1
+
+
+
+## Author
+
+- [@esperancaleonardo](https://www.github.com/esperancaleonardo)
+
+## References
+
+ - [Scrapy](https://scrapy.org/) - [Docs](https://docs.scrapy.org/en/latest/)
+ - [Pandas](https://pandas.pydata.org/) - [Docs](https://pandas.pydata.org/docs/)
